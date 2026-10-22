@@ -1,65 +1,53 @@
 # CampusNotes
 
-CampusNotes is a web platform where Yıldız Technical University (YTÜ) students share and find course notes, past exam questions and solutions, organized by course and rated by other students.
+CampusNotes is a web app where Yıldız Technical University (YTÜ) students share and find course notes, past exam questions and solutions, organized by course and upvoted by other students.
 
 Today, course materials are scattered across department WhatsApp groups and passed down from upper-year students. Files get lost in chat history and are hard to find before exams. CampusNotes puts them in one searchable place.
 
-> Status: planning phase (Week 4). First release planned for Week 12.
+> Status: planning phase (Week 4). Final demo planned for Week 12.
 
 ## Team
 
 | Member | Role |
 | --- | --- |
-| Gökay Mızrak | Project lead, backend |
-| İbrahim Muhsin Yıldırım | Frontend and UX |
-| Yasin Buğra Tolu | QA, DevOps, backend support |
+| Gökay Mızrak | Project lead, backend (Flask routes, login, uploads) |
+| İbrahim Muhsin Yıldırım | Frontend (HTML templates, Bootstrap) |
+| Yasin Buğra Tolu | Database and testing |
 
 ## Tech stack
 
 - **Backend:** Python + Flask
-- **Pages:** Jinja2 HTML templates + Bootstrap CSS
-- **Database:** SQLite (development), PostgreSQL (deployment), via SQLAlchemy
+- **Pages:** Jinja2 HTML templates + Bootstrap
+- **Database:** SQLite
 - **Login:** Flask-Login
-- **Tests / CI:** pytest + GitHub Actions
-- **Hosting:** Render
+- **Tests:** pytest
 
-## Planned features (first release)
+The app runs locally; there is no public deployment in the first release.
+
+## Planned features
 
 - Sign up and log in
-- Browse materials by faculty, department and course
+- List courses and their materials
 - Upload PDFs or images (notes, past exams, solutions)
-- Search by course code, course name and title
-- Upvote / downvote materials
-- Report a material; moderator panel to hide or delete it
+- Search by course name or title
+- Upvote materials
+- Report a material; an admin can delete reported items
 
 ## Running locally
 
-> Setup instructions will be added once the first code is in the repository (Week 6).
+> Setup instructions will be completed once the first code is added (Week 6).
 
 ```bash
-git clone https://github.com/<campusnotes4>/campusnotes.git
+git clone https://github.com/campusnotes4/campusnotes.git
 cd campusnotes
 python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
+venv\Scripts\activate          # macOS/Linux: source venv/bin/activate
 pip install -r requirements.txt
 flask run
 ```
 
-## Running tests
-
-```bash
-pytest
-```
-
 ## Contributing
 
-- `main` is protected: no direct pushes.
-- Create a branch per issue: `feature/<issue-number>-short-name` or `fix/<issue-number>-short-name`.
-- Open a pull request that links the issue (`Closes #<number>`).
-- CI must pass and one other team member must approve before merging.
-- Commit messages start with `feat:`, `fix:`, `docs:`, `test:` or `chore:`.
-
-## Documents
-
-- Software Development Plan (D1): `docs/<TeamName>_D1_SDP.pdf`
-- Project board: GitHub Projects tab of this repository
+- Create a branch per issue: `feature/<issue-number>-short-name`
+- Open a pull request that links the issue (`Closes #<number>`)
+- One other team member reviews before merging
